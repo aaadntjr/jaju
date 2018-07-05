@@ -937,7 +937,9 @@ footer {
     position: absolute;
     top: 0;
     right: 0;
-    border-radius: 30%;
+    border-left: 2px solid #606060;
+    border-radius: 20px;
+/*    margin-left: -30px;*/
 /*    background: white;*/
 }
 .footer {
@@ -947,9 +949,6 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    border-top: 2px solid #ddd;
-    border-bottom: 2px solid #ddd;
-    border-left: 2px solid #ddd;
     background: white;
     border-radius: 40px 0px 0px 40px;
 }
