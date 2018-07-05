@@ -90,8 +90,7 @@ header nav .gnb .gnb_item a::before {
     left: 0;
     right: 0;
     bottom: 0;
-    color: white;
-    text-shadow: 0px 0px 3px #a7c796,0px 0px 3px #a7c796,0px 0px 3px #a7c796,0px 0px 3px #a7c796,0px 0px 3px #a7c796,0px 0px 3px #a7c796,0px 0px 3px #a7c796,0px 0px 3px #a7c796,0px 0px 3px #a7c796,0px 0px 3px #a7c796,0px 0px 3px #a7c796;
+    color: #a7c796;
     transform: rotateY(180deg) translateZ(20px);
     transform-style: preserve-3d;
     backface-visibility: hidden;
@@ -647,6 +646,9 @@ header nav .gnb .gnb_item a.gnb_active {
     transition: .8s;
     opacity:1;
 }
+
+/*gnb컬러 바꾸기*/
+
 .section03_opacity {
     opacity: 1;
 }
