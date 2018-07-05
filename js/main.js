@@ -4,10 +4,8 @@ $(document).ready(function(){
     //섹션 돌리기!~~!~!
     var spin = 0; 
     $(".prev_btn").hide();
-    $(".section").hide();
-    $(".section01").show();
 
-     /*레이아웃 펑션*/  
+    
     function layout (){
     $(".spin").css({"transform":"rotateY("+ spin +"deg)"}); 
         
@@ -18,80 +16,97 @@ $(document).ready(function(){
         };
         
         if(spin%360 == -72) {
-            $(".section").hide();
-            $(".section02").show();
             $(".gnb_item a").removeClass("gnb_active");
             $(".gnb_item01 a").addClass("gnb_active");
-            $(".section02_title").addClass("section02_active");
-            $(".section02_main").addClass("section02_active");
-            $(".section02_sub").addClass("section02_active");
+//            $(".section").css({"display":"block"});
+//            $(".section04").css({"display":"none"});
+//            $(".section05").css({"display":"none"});
+            setTimeout(function(){
+                $(".section02").addClass("section02_active");
+            }, 1000);
             return false;
+            
         }else if(spin%360 == -144) {
-            $(".section").hide();
-            $(".section03").show();
             $(".gnb_item a").removeClass("gnb_active");
             $(".gnb_item02 a").addClass("gnb_active");
-            $(".section03_main").addClass("section03_opacity");
-            $(".section03_body_copy").addClass("section03_opacity");
+//            $(".section").css({"display":"block"});
+//            $(".section01").css({"display":"none"});
+//            $(".section05").css({"display":"none"});
+            
+//            setTimeout(function(){
+//                //            }, 1000);
             return false;
+            
         }else if(spin%360 == -216) {
-            $(".section").hide();
-            $(".section04").show();
-            $(".section04").addClass("section04_active");
             $(".gnb_item a").removeClass("gnb_active");
             $(".gnb_item03 a").addClass("gnb_active");
+//            $(".section").css({"display":"block"});
+//            $(".section01").css({"display":"none"});
+//            $(".section02").css({"display":"none"});
+    
+            
+//            setTimeout(function(){
+//                $(".section03").css({"display":"none"});
+//                $(".section05").css({"display":"none"});
+//            }, 1000);
             return false;
+            
         }else if(spin%360 == -288) {
-            $(".section").hide();
-            $(".section05").show();
-            $(".section05").addClass("section05_active");
             $(".gnb_item a").removeClass("gnb_active");
             $(".gnb_item04 a").addClass("gnb_active");
+//            $(".section").css({"display":"block"});
+//            $(".section02").css({"display":"none"});
+//            $(".section03").css({"display":"none"});
+           
+//            setTimeout(function(){
+//                $(".section05").addClass("section05_active");
+//            }, 1000);
+            
             return false;
+            
         }else if(spin%360 == 0) {
-            $(".section").hide();
-            $(".section01").show();
             $(".gnb_item a").removeClass("gnb_active");
+//            $(".section").css({"display":"block"});
+//            $(".section03").css({"display":"none"});
+//            $(".section04").css({"display":"none"});
+           
+//            setTimeout(function(){
+//               
+//                $(".section01").show();
+//            }, 1000);
             return false;
+            
         }else {
             return false;
         };
         
     };/*레이아웃 펑션 끝*/
     
+    
      $("header>h1>a").click(function(){/*f로고 클릭*/
         spin = 0; 
-        $(".spin").css({"transform":"rotateY("+ spin +"deg)"});
-        $(".section").hide();
-        $(".section01").show();
-        $(".gnb_item a").removeClass("gnb_active");
-        $(".prev_btn").hide();
-        
+         return layout();
+
     });/*로고 클릭 끝*/
     
     /*gnb 메뉴 클릭하기*/
     $(".gnb_item01").click(function(){
        spin = -72;
-        $(".gnb_item").removeClass("gnb_active");
-        $(this).addClass("gnb_active");
         return layout();
     });
     $(".gnb_item02").click(function(){
        spin = -144;
-        $(".gnb_item").removeClass("gnb_active");
-        $(this).addClass("gnb_active");
+        
         return layout();
     });
     $(".gnb_item03").click(function(){
        spin = -216;
-        $(".gnb_item").removeClass("gnb_active");
-        $(this).addClass("gnb_active");
+        
         return layout();
     });
     $(".gnb_item04").click(function(){
        spin = -288;
-        $(".gnb_item").removeClass("gnb_active");
-        $(this).addClass("gnb_active");
+       
         return layout();
     });
     
@@ -148,7 +163,7 @@ $(document).ready(function(){
             var height = $(selector).height();
             var left = $(selector).offset().left;
             var top = $(selector).offset().top;
-            var degx = (e.pageY - (top - height * 0.2)) * 0.02;
+            var degx = (e.pageY - (top - height * 0.1)) * 0.02;
             var degy = (e.pageX - (left - width * 0.5)) * 0.02;
             
             $(selector).css({"transform":"rotateX("+ -degx +"deg) rotateY("+ degy +"deg)"});
